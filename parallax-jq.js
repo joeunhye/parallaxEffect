@@ -43,6 +43,33 @@ $(window).scroll(function () {
 	}, 1000);
 
 	//이질감 효과
+	// let offset1 = scrollTop - $("#section1").offset().top;
+	// let offset2 = scrollTop - $("#section2").offset().top;
+	// let offset3 = scrollTop - $("#section3").offset().top;
+	// let offset4 = scrollTop - $("#section4").offset().top;
+	// let offset5 = scrollTop - $("#section5").offset().top;
+	// let offset6 = scrollTop - $("#section6").offset().top;
+	// let offset7 = scrollTop - $("#section7").offset().top;
+	// let offset8 = scrollTop - $("#section8").offset().top;
+	// let offset9 = scrollTop - $("#section9").offset().top;
+	// $("#section1").css({ transform: `translateX(${offset1}px)` });
+	// $("#section2").css({ transform: `translateX(${offset2}px)` });
+	// $("#section3").css({ transform: `translateX(${offset3}px)` });
+	// $("#section4").css({ transform: `translateX(${offset4}px)` });
+	// $("#section5").css({ transform: `translateX(${offset5}px)` });
+	// $("#section6").css({ transform: `translateX(${offset6}px)` });
+	// $("#section7").css({ transform: `translateX(${offset7}px)` });
+	// $("#section8").css({ transform: `translateX(${offset8}px)` });
+	// $("#section9").css({ transform: `translateX(${offset9}px)` });
+
+	//for문
+	// for (let i = 1; i <= 9; i++) {
+	// 	let offset = scrollTop - $(`#section${i}`).offset().top;
+	// 	$(`#section${i}`).css({ transform: `translateX(${offset}px)` });
+	// 	console.log(offset);
+	// }
+
+	//each()
 	$(".content__item").each(function (i) {
 		let offset1 = (scrollTop - $(this).offset().top) * 0.2;
 		let offset2 = (scrollTop - $(this).offset().top) * 0.1;
@@ -58,15 +85,17 @@ $(window).scroll(function () {
 	});
 
 	//글씨 나타나기
-	document.querySelectorAll(".content__item").forEach(item => {
-		if (scrollTop > item.offsetTop) {
-			item.querySelectorAll(".content__item__desc span").forEach((span, index) => {
-				setTimeout(() => {
-					span.classList.add("show");
-				}, 50 * (index + 1));
+	// for문
+	for (let i = 1; i <= 9; i++) {
+		if (scrollTop >= $(`#section${i}`).offset().top) {
+			console.log(i);
+			$(`#section${i} .content__item__desc span`).each(function (i) {
+				setTimeout(function () {
+					$(`#section${i} .content__item__desc span`).eq(i).addClass("show");
+				}, 50 * i);
 			});
 		}
-	});
+	}
 });
 
 function hasScroll() {
