@@ -1,0 +1,236 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.parallax {
+	background-color: #222;
+	color: #fff;
+	font-family: "NexonLv1Gothic";
+	font-weight: 300;
+}
+#paraHeader {
+	padding: 20px;
+}
+#paraHeader h1 {
+	display: inline-block;
+	margin-bottom: 8px;
+	font-size: 20px;
+	border-bottom: 1px dashed #fff;
+}
+#parallax__nav {
+	position: fixed;
+	right: 20px;
+	/* top: -100px; */
+	top: 20px;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 15px 20px;
+	border-radius: 50px;
+	transition: top 0.3s ease;
+}
+#parallax__nav.show {
+	top: 20px;
+}
+#parallax__nav.hide {
+	top: -100px;
+}
+#parallax__nav li {
+	list-style: none;
+	display: inline;
+}
+#parallax__nav li a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	text-decoration: none;
+}
+#parallax__nav li.active a {
+	background: #fff;
+	color: #000;
+	border-radius: 50%;
+}
+
+#parallax__dot {
+	position: fixed;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 20px 10px;
+	border-radius: 30px;
+}
+#parallax__dot li {
+	list-style: none;
+}
+#parallax__dot li a {
+	width: 20px;
+	height: 20px;
+	display: block;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	margin: 8px;
+	position: relative;
+	text-decoration: none;
+}
+#parallax__dot li.active a {
+	background: #fff;
+}
+#parallax__dot li a span {
+	position: absolute;
+	left: -105px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: #fff;
+	color: #000;
+	display: block;
+	padding: 2px 15px;
+	border-radius: 30px;
+	opacity: 0;
+}
+#parallax__dot li.active a span {
+	opacity: 1;
+}
+
+.parallax__scrollTop {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.4);
+	color: #fff;
+	padding: 10px 30px;
+	border-radius: 50px;
+}
+#paraContents {
+	max-width: 1600px;
+	margin: 0 auto;
+	width: 100%;
+	overflow: hidden;
+}
+.content__item {
+	position: relative;
+	width: 1000px;
+	max-width: 70%;
+	padding-top: 10vw;
+	margin: 30vw 0;
+	text-align: right;
+}
+.content__item:nth-child(even) {
+	margin-left: auto;
+	text-align: left;
+}
+.content__item__num {
+	font-family: "Lato";
+	font-size: 25vw;
+	opacity: 0.07;
+	position: absolute;
+	right: -5vw;
+	top: -10vw;
+}
+.content__item:nth-child(even) .content__item__num {
+	right: auto;
+	left: -5vw;
+}
+.content__item__title {
+	padding-bottom: 10px;
+}
+.content__item__imgWrap {
+	width: 100%;
+	padding-bottom: 56.25%;
+	background: #000;
+	position: relative;
+	overflow: hidden;
+}
+.content__item__img {
+	position: absolute;
+	left: -5%;
+	top: -5%;
+	width: 110%;
+	height: 110%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	filter: saturate(0%);
+	/* transition: all 0.3s ease; */
+}
+.content__item__img:hover {
+	filter: saturate(100%);
+}
+.content__item:nth-child(1) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images01@2.jpg);
+}
+.content__item:nth-child(2) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images02@2.jpg);
+}
+.content__item:nth-child(3) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images03@2.jpg);
+}
+.content__item:nth-child(4) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images04@2.jpg);
+}
+.content__item:nth-child(5) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images05@2.jpg);
+}
+.content__item:nth-child(6) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images06@2.jpg);
+}
+.content__item:nth-child(7) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images07@2.jpg);
+}
+.content__item:nth-child(8) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images08@2.jpg);
+}
+.content__item:nth-child(9) .content__item__img {
+	background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images09@2.jpg);
+}
+.content__item__desc {
+	font-size: 4vw;
+	line-height: 1.4;
+	word-break: keep-all;
+	margin-top: -6vw;
+	margin-right: -3vw;
+	position: relative;
+	z-index: 1;
+}
+.content__item:nth-child(even) .content__item__desc {
+	margin-right: 0;
+	margin-left: -3vw;
+}
+#paraFooter {
+	padding: 10vw 0;
+}
+#paraFooter h2 {
+	font-size: 8vw;
+	line-height: 1.2;
+	padding: 10vw 8vw 0 8vw;
+	text-transform: uppercase;
+	margin-bottom: 3vw;
+}
+#paraFooter em {
+	display: block;
+	font-weight: 100;
+	padding-left: 18vw;
+}
+#paraFooter .footerInfo {
+	display: flex;
+	padding: 20px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background: #000;
+	padding: 15px 20px;
+	margin-bottom: 2px;
+}
+#paraFooter .footerInfo li {
+	display: inline;
+	list-style: none;
+}
+#paraFooter .footerInfo li a {
+	text-decoration: none;
+	color: #fff;
+}
