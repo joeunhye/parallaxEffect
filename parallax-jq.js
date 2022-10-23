@@ -50,13 +50,17 @@ $(window).scroll(function () {
 	});
 
 	//글씨 나타나기
-	$('.content__item').each(function(i) {
-		if(scrollTop >= $(this).offset().top) {
-			$(this).find('.content__item__desc span').each(function (j) {
-				$(this).addClass('show').css('transition-delay', `${0.05*j}s`);
-			});
+	$(".content__item").each(function (i) {
+		if (scrollTop >= $(this).offset().top) {
+			$(this)
+				.find(".content__item__desc span")
+				.each(function (j) {
+					$(this)
+						.addClass("show")
+						.css("transition-delay", `${0.05 * j}s`);
+				});
 		}
-	})
+	});
 });
 
 function hasScroll() {

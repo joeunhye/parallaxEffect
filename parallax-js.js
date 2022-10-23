@@ -43,6 +43,30 @@ window.addEventListener("scroll", function () {
 		item.querySelector(".content__item__desc").style.transform = `translateX(${offset2}px)`;
 		item.querySelector(".content__item__num").style.transform = `rotate(${-offset2}deg)`;
 	});
+
+	//글씨 나타나기
+	// document.querySelectorAll(".content__item").forEach(item => {
+	// 	if (scrollTop > item.offsetTop) {
+	// 		item.querySelectorAll(".content__item__desc span").forEach((span, index) => {
+	// 			span.classList.add("show");
+	// 			// .css("transition-delay", `${0.05 * j}s`);
+	// 			span.style.transitionDelay = `${0.05 * index}s`;
+	// 		});
+	// 	}
+	// });
+
+	//GSAP
+	document.querySelectorAll(".content__item").forEach((item, index) => {
+		if (scrollTop >= item.offsetTop) {
+			gsap.to(item.querySelectorAll(".split span"), {
+				duration: 0.5,
+				opacity: 1,
+				y: 0,
+				stagger: 0.05,
+				ease: "power4.out",
+			});
+		}
+	});
 });
 
 function hasScroll() {
@@ -70,4 +94,19 @@ document.querySelectorAll("#parallax__dot ul li a").forEach(el => {
 			behavior: "smooth",
 		});
 	});
+});
+
+//글씨 쪼개기
+// let text = document.querySelector("#section1 .content__item__desc").innerText;
+// let split = text.split("").join("</span><span aria-hidden='true'>");
+// split = "<span aria-hidden='true'>" + split + "</span>";
+// document.querySelector("#section1 .content__item__desc").innerHTML = split;
+
+//다중 글씨 쪼개기
+document.querySelectorAll(".split").forEach(el => {
+	let text = el.innerText;
+	let split = text.split("").join("</span><span aria-hidden='true'>");
+	split = "<span aria-hidden='true'>" + split + "</span>";
+	el.innerHTML = split;
+	el.setAttribute("aria-label", text);
 });
