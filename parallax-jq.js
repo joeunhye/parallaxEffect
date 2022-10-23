@@ -61,6 +61,13 @@ $(window).scroll(function () {
 				});
 		}
 	});
+
+	//리빌 효과
+	// $(".reveal").each(function () {
+	// 	if (scrollTop >= $(this).offset().top - $(window).height() / 2) {
+	// 		$(this).addClass("show");
+	// 	}
+	// });
 });
 
 function hasScroll() {

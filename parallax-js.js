@@ -67,6 +67,22 @@ window.addEventListener("scroll", function () {
 			});
 		}
 	});
+
+	//리빌 효과
+	// const reveal = document.querySelectorAll(".reveal");
+
+	// reveal.forEach(el => {
+	// 	const revealDelay = el.dataset.delay;
+	// 	if (scrollTop >= el.parentElement.offsetTop) {
+	// 		if (revealDelay == undefined) {
+	// 			el.classList.add("show");
+	// 		} else {
+	// 			setTimeout(() => {
+	// 				el.classList.add("show");
+	// 			}, revealDelay);
+	// 		}
+	// 	}
+	// });
 });
 
 function hasScroll() {
